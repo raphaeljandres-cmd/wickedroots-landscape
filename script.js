@@ -1,16 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const nodes = document.querySelectorAll(".node");
+  const form = document.querySelector(".contact-form");
 
-  if (!nodes.length) return;
+  if (!form) return;
 
-  let currentIndex = 0;
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const button = form.querySelector("button");
+    const originalText = button.textContent;
 
-  const updateNodes = () => {
-    nodes.forEach((node) => node.classList.remove("active"));
-    nodes[currentIndex % nodes.length].classList.add("active");
-    currentIndex += 1;
-  };
+    button.textContent = "Thank you — we'll be in touch soon";
+    button.disabled = true;
 
-  updateNodes();
-  setInterval(updateNodes, 1500);
+    setTimeout(() => {
+      button.textContent = originalText;
+      button.disabled = false;
+      form.reset();
+    }, 2200);
+  });
 });

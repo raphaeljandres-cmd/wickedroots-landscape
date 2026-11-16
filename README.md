@@ -1,25 +1,37 @@
 # Wicked Roots Landscape
 
-This repository contains a working static landing page for Harvey, an AI research and operations concept inspired by the MeshKore agent directory.
+This repository is now a lead-generation website for a landscaping business.
 
 ## Local preview
 
-Open `index.html` directly in a browser, or run:
+Run:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then visit:
+Then open:
 
 http://localhost:8000
 
-## Notes
+## Project purpose
 
-The original MeshKore link appears to be unavailable or not publicly resolving in this environment, so this repo is set up as a self-contained landing page concept that still reflects the same AI-operator direction.
+The site is designed to:
+
+- present the business as premium and trustworthy
+- explain the core services clearly
+- drive inquiries through a contact form and quote CTA
+- work as a strong landing page for local lead generation
+
+## Best next steps
+
+- replace placeholder email and phone with real business contact details
+- add service-area pages if needed
+- connect the contact form to email or a CRM later
+- upload to Netlify or GitHub Pages for live deployment
 
 ## Files
 
-- `index.html` — landing page structure and copy
-- `styles.css` — premium dark theme and responsive layout
-- `script.js` — subtle animated flow indicator
+- `index.html` — site content and layout
+- `styles.css` — landscaping brand design and responsive layout
+- `script.js` — contact form feedback behavior
