@@ -1,37 +1,29 @@
 # Wicked Roots Landscape
 
-This repository is now a lead-generation website for a landscaping business.
+A static lead-generation website concept for a local landscaping business.
 
-## Local preview
+## Preview locally
 
-Run:
+1. Download or clone this repository.
+2. Open a terminal in the project folder.
+3. Run `python -m http.server 8000`.
+4. Visit `http://localhost:8000` in your browser.
 
-```bash
-python -m http.server 8000
-```
+## Before publishing: personalize these details
 
-Then open:
+The page intentionally uses placeholders rather than invented business facts. Update:
 
-http://localhost:8000
+- `[YOUR CITY / AREA]` in the page headline and description
+- `[YOUR CITY AND NEARBY AREAS]` in the contact section
+- `[YOUR BUSINESS PHONE]` and `[YOUR BUSINESS EMAIL]`
+- `BUSINESS_EMAIL` at the top of `script.js`
+- the Unsplash demo image in `styles.css` with a photo of your own work, if available
+- the list of services to match what you actually offer
 
-## Project purpose
+The estimate form currently opens the visitor's email application using a `mailto:` link. It is not a hosted form and depends on the visitor having an email app configured. For more reliable lead capture, connect a form provider or CRM before relying on it.
 
-The site is designed to:
+Do not publish sample reviews, customer counts, guarantees, or availability claims as real facts. Add genuine reviews and project photos only with permission.
 
-- present the business as premium and trustworthy
-- explain the core services clearly
-- drive inquiries through a contact form and quote CTA
-- work as a strong landing page for local lead generation
+## Lead generation
 
-## Best next steps
-
-- replace placeholder email and phone with real business contact details
-- add service-area pages if needed
-- connect the contact form to email or a CRM later
-- upload to Netlify or GitHub Pages for live deployment
-
-## Files
-
-- `index.html` — site content and layout
-- `styles.css` — landscaping brand design and responsive layout
-- `script.js` — contact form feedback behavior
+See [`LOCAL-LEADS.md`](LOCAL-LEADS.md) for a beginner-friendly local outreach plan and a three-email sequence.
