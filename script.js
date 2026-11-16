@@ -1,11 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const nodes = document.querySelectorAll(".node");
 
-  let index = 0;
-  setInterval(() => {
+  if (!nodes.length) return;
+
+  let currentIndex = 0;
+
+  const updateNodes = () => {
     nodes.forEach((node) => node.classList.remove("active"));
-    const activeNode = nodes[index % nodes.length];
-    activeNode.classList.add("active");
-    index += 1;
-  }, 1500);
+    nodes[currentIndex % nodes.length].classList.add("active");
+    currentIndex += 1;
+  };
+
+  updateNodes();
+  setInterval(updateNodes, 1500);
 });
