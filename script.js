@@ -1,5 +1,5 @@
 // Configure this with the real business inbox before publishing.
-const BUSINESS_EMAIL = "REPLACE_WITH_YOUR_EMAIL";
+const BUSINESS_EMAIL = "wickedrootslandscaping@gmail.com";
 
 document.addEventListener("DOMContentLoaded", () => {
   const year = document.querySelector("#current-year");

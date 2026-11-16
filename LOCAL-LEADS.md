@@ -1,14 +1,14 @@
 # Local leads for Wicked Roots Landscape
 
-A practical, beginner-friendly plan. Start small, track every conversation, and focus on real fit rather than sending mass messages.
+A practical, beginner-friendly plan for Raleigh, NC and surrounding areas. Start small, track every conversation, and focus on real fit rather than sending mass messages.
 
 ## 1. Get the basics ready
 
 Before contacting prospects:
 
-- Choose your actual service area (city, nearby towns, or ZIP codes).
+- Choose your actual service area (Raleigh, NC and nearby neighborhoods or ZIP codes).
 - Pick the services you can reliably deliver and the types of jobs you want.
-- Replace every bracketed placeholder on the website with accurate business details.
+- Use the business details for Wicked Roots Landscape: phone (919) 780-9603 and email wickedrootslandscaping@gmail.com.
 - Configure and test the estimate form. The current static form opens the visitor's email app; it does not store submissions by itself.
 - Prepare 3–5 genuine before-and-after photos and request permission before using customer photos.
 - Write down your real estimate process, scheduling expectations, insurance/licensing details (if applicable), and any guarantees you actually offer. Do not claim credentials you do not have.
@@ -37,7 +37,7 @@ Personalize the bracketed line using something you actually observed. Do not pre
 
 Hi [Name],
 
-I’m [Your Name] with Wicked Roots Landscape, a local landscaping business serving [City/Area]. I noticed [specific, truthful reason this might be relevant—for example, your company manages several local properties].
+I’m [Your Name] with Wicked Roots Landscape, a local landscaping business serving Raleigh, NC. I noticed [specific, truthful reason this might be relevant—for example, your company manages several local properties].
 
 We help with [specific service you really provide, such as seasonal cleanups or planting-bed refreshes]. If you have an upcoming project or need another local estimate, would it be useful if I sent over a few questions and arranged a site visit?
 
@@ -46,8 +46,7 @@ If this isn’t relevant, just let me know and I won’t follow up.
 Thanks,  
 [Your Name]  
 Wicked Roots Landscape  
-[Business phone] · [Website]  
-[Business mailing address, where required]
+(919) 780-9603 · wickedrootslandscaping@gmail.com
 
 ### Email 2 — gentle follow-up (about 4 business days later)
 
@@ -55,7 +54,7 @@ Wicked Roots Landscape
 
 Hi [Name],
 
-Just following up once in case landscaping help is on your list. We’re available to discuss [specific service] in [City/Area] and can provide an estimate after learning about the site and scope.
+Just following up once in case landscaping help is on your list. We’re available to discuss [specific service] in Raleigh, NC and can provide an estimate after learning about the site and scope.
 
 Would a short call next week be useful? If not, no worries—reply “no thanks” and I’ll close the loop.
 
@@ -68,7 +67,7 @@ Best,
 
 Hi [Name],
 
-I haven’t heard back, so I’ll leave it here. If you need [specific service] later, you can reach Wicked Roots Landscape at [phone/email] or request an estimate at [website].
+I haven’t heard back, so I’ll leave it here. If you need [specific service] later, you can reach Wicked Roots Landscape at (919) 780-9603 or wickedrootslandscaping@gmail.com.
 
 If you’d rather not receive another note, reply and I’ll make sure not to contact you again.
 

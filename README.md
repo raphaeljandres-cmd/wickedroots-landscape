@@ -9,6 +9,13 @@ A static lead-generation website concept for a local landscaping business.
 3. Run `python -m http.server 8000`.
 4. Visit `http://localhost:8000` in your browser.
 
+## Business details for this site
+
+- City: Raleigh, NC
+- Phone: (919) 780-9603
+- Email: wickedrootslandscaping@gmail.com
+- Service area: Raleigh, NC and nearby areas
+
 ## Before publishing: personalize these details
 
 The page intentionally uses placeholders rather than invented business facts. Update:
