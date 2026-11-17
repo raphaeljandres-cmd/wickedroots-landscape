@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17251d" />
+    <meta name="description" content="Private, browser-based scheduling and lead tracking prototype for Wicked Roots Landscape." />
+    <title>Workboard | Wicked Roots Landscape</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Wicked Roots Landscape home">
+        <span class="brand-mark">W</span>
+        <span><small>WICKED ROOTS</small><strong>LANDSCAPE</strong></span>
+      </a>
+      <div class="top-actions">
+        <span class="local-badge"><i></i> This browser only</span>
+        <a href="index.html" class="site-link">View website ↗</a>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="intro">
+        <div>
+          <p class="eyebrow">RALEIGH, NORTH CAROLINA</p>
+          <h1>Your workboard.</h1>
+          <p class="intro-copy">Keep upcoming jobs and potential customers organized in one place.</p>
+        </div>
+        <div class="today-card"><span>TODAY</span><strong id="today-label">—</strong></div>
+      </section>
+
+      <aside class="privacy-notice" role="note">
+        <strong>Prototype note:</strong> This dashboard has no login or cloud sync. Its data is saved only in this browser on this device, so your employee will not see updates on their device. Don’t enter sensitive customer details. Use Export/Import to move a backup manually; for a truly shared team schedule, this needs a secure shared database and sign-in.
+      </aside>
+
+      <section class="stats" aria-label="Workboard overview">
+        <article class="stat-card"><span>JOBS THIS MONTH</span><strong id="jobs-count">0</strong><small>Scheduled in the displayed month</small></article>
+        <article class="stat-card"><span>OPEN LEADS</span><strong id="leads-count">0</strong><small>Not marked won or closed</small></article>
+        <article class="stat-card"><span>FOLLOW-UPS DUE</span><strong id="followups-count">0</strong><small>Due today or overdue</small></article>
+      </section>
+
+      <section class="panel calendar-panel" aria-labelledby="calendar-heading">
+        <div class="panel-heading calendar-heading">
+          <div><p class="eyebrow">SCHEDULE</p><h2 id="calendar-heading">Jobs calendar</h2></div>
+          <div class="month-controls"><button id="prev-month" class="icon-button" type="button" aria-label="Previous month">←</button><strong id="month-label"></strong><button id="next-month" class="icon-button" type="button" aria-label="Next month">→</button><button id="today-button" class="button button-quiet" type="button">Today</button></div>
+        </div>
+        <div class="calendar-scroll"><div class="calendar" id="calendar" role="grid" aria-label="Monthly jobs calendar"></div></div>
+        <p class="hint">Select a date to start a job for that day. Select a job chip to edit it.</p>
+      </section>
+
+      <div class="work-grid">
+        <section class="panel" aria-labelledby="job-form-heading">
+          <div class="panel-heading"><div><p class="eyebrow">SCHEDULE WORK</p><h2 id="job-form-heading">Add a job</h2></div></div>
+          <form id="job-form" class="form-grid">
+            <input type="hidden" name="id" />
+            <label>Job / customer name<input name="title" required maxlength="100" placeholder="e.g. Front garden refresh" /></label>
+            <div class="two-col"><label>Date<input name="date" type="date" required /></label><label>Start time<input name="time" type="time" /></label></div>
+            <label>Customer name<input name="customer" maxlength="100" placeholder="Name" /></label>
+            <label>Job address or area<input name="address" maxlength="180" placeholder="Raleigh or nearby area" /></label>
+            <div class="two-col"><label>Service<select name="service"><option value="">Choose service</option><option>Landscape refresh</option><option>Planting or mulch</option><option>Patio or walkway</option><option>Lawn or garden care</option><option>Other</option></select></label><label>Assigned to<input name="assigned" maxlength="80" placeholder="Employee name" /></label></div>
+            <label>Notes<textarea name="notes" rows="3" maxlength="1000" placeholder="Materials, access, or other work notes"></textarea></label>
+            <div class="form-actions"><button class="button" type="submit" id="job-submit">Add to schedule</button><button class="button button-quiet hidden" type="button" id="job-cancel">Cancel edit</button></div>
+          </form>
+        </section>
+
+        <section class="panel" aria-labelledby="day-jobs-heading">
+          <div class="panel-heading"><div><p class="eyebrow">SELECTED DATE</p><h2 id="day-jobs-heading">Jobs</h2></div></div>
+          <div id="day-jobs" class="item-list"></div>
+        </section>
+      </div>
+
+      <section class="panel leads-panel" aria-labelledby="leads-heading">
+        <div class="panel-heading leads-heading">
+          <div><p class="eyebrow">FOLLOW UP WITH PEOPLE</p><h2 id="leads-heading">Lead tracker</h2><p class="panel-copy">Add relevant contacts you’ve found through referrals or public business channels. Review every email before sending.</p></div>
+          <div class="lead-tools"><input id="lead-search" type="search" placeholder="Search leads" aria-label="Search leads" /><select id="lead-filter" aria-label="Filter leads"><option value="all">All statuses</option><option>New</option><option>Contacted</option><option>Follow-up</option><option>Estimate</option><option>Won</option><option>Closed</option></select></div>
+        </div>
+        <div class="lead-layout">
+          <form id="lead-form" class="form-grid lead-form">
+            <input type="hidden" name="id" />
+            <p class="form-subheading" id="lead-form-heading">Add a lead</p>
+            <label>Contact or business name<input name="name" required maxlength="100" placeholder="Name or business" /></label>
+            <div class="two-col"><label>Email<input name="email" type="email" maxlength="160" placeholder="Public business email" /></label><label>Phone<input name="phone" type="tel" maxlength="40" placeholder="Optional" /></label></div>
+            <div class="two-col"><label>Lead source<input name="source" maxlength="100" placeholder="Referral, business profile…" /></label><label>Status<select name="status"><option>New</option><option>Contacted</option><option>Follow-up</option><option>Estimate</option><option>Won</option><option>Closed</option></select></label></div>
+            <label>Follow-up date<input name="followUp" type="date" /></label>
+            <label>Notes<textarea name="notes" rows="3" maxlength="1000" placeholder="What service might fit? Keep notes brief and relevant."></textarea></label>
+            <div class="form-actions"><button class="button" type="submit" id="lead-submit">Save lead</button><button class="button button-quiet hidden" type="button" id="lead-cancel">Cancel edit</button></div>
+          </form>
+          <div id="lead-list" class="lead-list" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="data-tools" aria-label="Backup dashboard data">
+        <div><strong>Move or back up your data</strong><p>Export a JSON backup from this browser. Import it on another device to copy the data there. Changes won’t sync automatically.</p></div>
+        <div class="data-buttons"><button type="button" class="button button-quiet" id="export-button">Export backup</button><label class="button button-quiet import-button">Import backup<input id="import-file" type="file" accept="application/json,.json" /></label></div>
+      </section>
+
+      <footer class="footer"><span>Wicked Roots Landscape · Workboard prototype</span><a href="mailto:wickedrootslandscaping@gmail.com">Help? Email Raphael</a></footer>
+    </main>
+    <script src="dashboard.js"></script>
+  </body>
+</html>
