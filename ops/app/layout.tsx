@@ -1,3 +1,4 @@
+@import "./agent-characters.css";
 import type { Metadata } from "next";
 import "./styles.css";
 
