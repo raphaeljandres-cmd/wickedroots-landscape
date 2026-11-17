@@ -48,11 +48,15 @@ export default function Workboard({ email }: { email: string }) {
   async function runAgents(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); if (!selected || !service) return;
     setBusy(true); setError(""); setNotice("Fern, Pip, and Oak are working through their review steps…");
-    const response = await fetch("/api/agents/run", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ leadId: selected, service, context }) });
-    const result = await response.json();
-    if (!response.ok) setError(result.error || "Agent workflow failed.");
-    else setNotice("The agents finished. Their draft is waiting in the approval queue.");
-    await refresh(); setBusy(false);
+    try {
+      const response = await fetch("/api/agents/run", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ leadId: selected, service, context }) });
+      const result = await response.json();
+      if (!response.ok) setError(result.error || "Agent workflow failed.");
+      else setNotice("The agents finished. Their draft is waiting in the approval queue.");
+      await refresh();
+    } catch {
+      setError("Could not reach the agent workflow. Check your connection and try again.");
+    } finally { setBusy(false); }
   }
 
   async function updateDraft(draft: Draft, action: "save" | "send" | "reject", subject?: string, body?: string) {
@@ -75,23 +79,24 @@ export default function Workboard({ email }: { email: string }) {
       <section className="hero"><div><p className="eyebrow">PRIVATE OWNER WORKSPACE · RALEIGH, NC</p><h1>Good work, <em>well organized.</em></h1><p className="muted">Meet your little AI crew: they review the leads you provide, prepare a draft, and leave the final decision to you.</p></div><div className="stats"><div><span>LEADS</span><strong>{data.leads.length}</strong></div><div><span>NEEDS APPROVAL</span><strong>{pending.length}</strong></div><div><span>FOLLOW-UPS DUE</span><strong>{due}</strong></div></div></section>
       <div className="notice"><strong>Owner-controlled:</strong> Agents only process leads you add. No autonomous web scraping or bulk outreach. Emails send only after you click Approve & send and confirm. Configure private Supabase, OpenAI, and Resend credentials before use; see <code>ops/README.md</code>.</div>
       {notice && <p className="notice success" role="status">{notice}</p>}{error && <p className="notice error" role="alert">{error}</p>}
+
+      <section className={`panel team-panel ${busy ? "agents-busy" : ""}`} aria-labelledby="team-heading">
+        <div className="team-heading"><div><p className="eyebrow">YOUR LITTLE AI CREW</p><h2 id="team-heading">The team is ready when you are.</h2><p className="muted small">Three specialists, one lead at a time. When they’re working, their status rings come to life.</p></div><div className={`team-status ${busy ? "is-running" : ""}`}><span className="team-status-dot" />{busy ? "Crew in progress" : "Standing by"}</div></div>
+        <div className="team-roster" aria-live="polite">{AGENTS.map((agent) => {
+          const latest = data.runs.find((run) => run.agent_name === agent.runName);
+          const state = busy ? "working" : latest?.status === "failed" || latest?.status === "needs_attention" ? "issue" : latest ? "done" : "waiting";
+          const stateLabel = busy ? "Working on your request" : state === "done" ? "Last task complete" : state === "issue" ? "Review needed" : "Ready to help";
+          return <article className={`team-agent ${state}`} key={agent.key}><div className="avatar-ring"><AgentAvatar variant={agent.key} /></div><div className="team-agent-copy"><span className="agent-role">{agent.title}</span><h3>{agent.name}</h3><p>{agent.key === "scout" ? "Checks fit using only the facts you provide." : agent.key === "writer" ? "Prepares a concise, personal email draft." : "Checks for unsupported claims and concerns."}</p><span className="agent-state"><i />{stateLabel}</span></div></article>;
+        })}</div>
+        <form onSubmit={runAgents} className="agent-run-form"><label>Choose a lead<select value={selected} onChange={(event) => setSelected(event.target.value)} required><option value="">Choose a lead</option>{data.leads.filter((lead) => lead.email && !["Won","Closed"].includes(lead.status)).map((lead) => <option key={lead.id} value={lead.id}>{lead.name}</option>)}</select></label><label>Service you actually provide<input value={service} onChange={(event) => setService(event.target.value)} required placeholder="e.g. planting-bed refresh" /></label><label>Extra verified context<input value={context} onChange={(event) => setContext(event.target.value)} placeholder="Optional accurate detail" /></label><button className="button team-run-button" disabled={busy || !selected}>{busy ? <><span className="button-spinner" />Your crew is working…</> : <>Start the agents <span aria-hidden="true">↗</span></>}</button></form>
+      </section>
+
       <div className="main-grid">
         <section className="panel"><div className="panel-heading"><div><p className="eyebrow">PROSPECTS</p><h2>Lead board</h2></div><div className="filters"><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search leads" aria-label="Search leads" /><select value={filter} onChange={(event) => setFilter(event.target.value)}><option value="all">All statuses</option>{["New","Contacted","Follow-up","Estimate","Won","Closed"].map((status) => <option key={status}>{status}</option>)}</select></div></div>
           <form onSubmit={addLead} className="form lead-form"><h3>Add a lead</h3><div className="two-col"><label>Business/contact<input name="name" required maxLength={100} /></label><label>Public business email<input name="email" type="email" /></label></div><div className="two-col"><label>Source<input name="source" placeholder="Referral or public business source" /></label><label>Follow-up<input name="follow_up" type="date" /></label></div><label>Verified reason it may be a fit<textarea name="context" rows={2} placeholder="Truthful detail you confirmed; never invent a relationship or site visit." /></label><button className="button">Save lead</button></form>
           <div className="lead-list">{visibleLeads.length ? visibleLeads.map((lead) => <article className={`lead-card ${selected === lead.id ? "chosen" : ""}`} key={lead.id}><div><strong>{lead.name}</strong><span className="status">{lead.status}</span><p>{lead.email || "No email"} · {lead.source || "Source not recorded"}</p>{lead.context && <small>{lead.context}</small>}</div><div className="lead-controls"><button className="link-button" onClick={() => setSelected(lead.id)}>Use for agents</button><select aria-label={`Set status for ${lead.name}`} value={lead.status} onChange={async (event) => { await fetch(`/api/leads/${lead.id}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ status: event.target.value }) }); await refresh(); }}>{["New","Contacted","Follow-up","Estimate","Won","Closed"].map((status) => <option key={status}>{status}</option>)}</select></div></article>) : <p className="empty">Add a lead to start. Use relevant referrals or appropriate public business contacts.</p>}</div>
         </section>
-        <aside className="right-column">
-          <section className={`panel agent-panel ${busy ? "agents-busy" : ""}`}><p className="eyebrow">YOUR LITTLE AI CREW</p><h2>Meet the specialists</h2><p className="muted small">They work through one lead at a time. Click the button below and watch their activity appear.</p>
-            <div className="agent-crew" aria-live="polite">{AGENTS.map((agent) => {
-              const latest = data.runs.find((run) => run.agent_name === agent.runName);
-              const state = busy ? "working" : latest?.status === "failed" ? "issue" : latest ? "done" : "waiting";
-              const stateLabel = busy ? "On the job…" : state === "done" ? "Finished a task" : state === "issue" ? "Needs a check" : "Ready to help";
-              return <article className={`agent-character ${state}`} key={agent.key}><AgentAvatar variant={agent.key} /><div className="agent-info"><strong>{agent.name}</strong><span>{agent.title}</span><small>{stateLabel}</small></div><span className="agent-presence" aria-hidden="true" /></article>;
-            })}</div>
-            <form onSubmit={runAgents} className="form"><label>Lead<select value={selected} onChange={(event) => setSelected(event.target.value)} required><option value="">Choose a lead</option>{data.leads.filter((lead) => lead.email && !["Won","Closed"].includes(lead.status)).map((lead) => <option key={lead.id} value={lead.id}>{lead.name}</option>)}</select></label><label>Service you actually provide<input value={service} onChange={(event) => setService(event.target.value)} required placeholder="e.g. planting-bed refresh" /></label><label>Extra verified context<textarea value={context} onChange={(event) => setContext(event.target.value)} rows={2} placeholder="Optional accurate detail" /></label><button className="button" disabled={busy || !selected}>{busy ? "Your crew is working…" : "Start the agents"}</button></form>
-          </section>
-          <section className="panel activity-panel"><div className="panel-heading"><div><p className="eyebrow">OBSERVABILITY</p><h2>Agent activity</h2></div></div>{data.runs.length ? data.runs.map((run) => <article className="activity" key={run.id}><span className={`run-dot ${run.status}`} /><div><strong>{run.agent_name}</strong><p>{run.summary}</p><small>{new Date(run.created_at).toLocaleString()}</small></div></article>) : <p className="empty">No agent runs yet. Start the crew to see what each specialist did.</p>}</section>
-        </aside>
+        <aside className="right-column"><section className="panel activity-panel"><div className="panel-heading"><div><p className="eyebrow">OBSERVABILITY</p><h2>Agent activity</h2></div></div>{data.runs.length ? data.runs.map((run) => <article className="activity" key={run.id}><span className={`run-dot ${run.status}`} /><div><strong>{run.agent_name}</strong><p>{run.summary}</p><small>{new Date(run.created_at).toLocaleString()}</small></div></article>) : <p className="empty">No agent runs yet. Start the crew to see what each specialist did.</p>}</section></aside>
       </div>
       <section className="panel queue"><div className="panel-heading"><div><p className="eyebrow">HUMAN APPROVAL REQUIRED</p><h2>Approval queue <span className="count">{pending.length}</span></h2><p className="muted small">Edit and review each draft. Approve & send requires confirmation and sends through your configured Resend account.</p></div></div>{pending.length ? pending.map((draft) => <DraftCard key={draft.id} draft={draft} onAction={updateDraft} />) : <p className="empty">No drafts are waiting. Start the agents to create a draft for review.</p>}</section>
       <footer>Private workspace starter · Leads and agent runs are isolated by Supabase row-level security.</footer>
