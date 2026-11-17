@@ -1,101 +1,63 @@
-# Local leads for Wicked Roots Landscape
+# Local leads: Wicked Roots Landscape (Raleigh, NC)
 
-A practical, beginner-friendly plan for Raleigh, NC and surrounding areas. Start small, track every conversation, and focus on real fit rather than sending mass messages.
+A straightforward, relationship-first plan for finding landscaping customers. No marketing method guarantees jobs; track what gets real conversations and repeat the useful parts.
 
-## 1. Get the basics ready
+## Your starting offer
 
-Before contacting prospects:
+Keep it focused and honest. For example:
 
-- Choose your actual service area (Raleigh, NC and nearby neighborhoods or ZIP codes).
-- Pick the services you can reliably deliver and the types of jobs you want.
-- Use the business details for Wicked Roots Landscape: phone (919) 780-9603 and email wickedrootslandscaping@gmail.com.
-- Configure and test the estimate form. The current static form opens the visitor's email app; it does not store submissions by itself.
-- Prepare 3–5 genuine before-and-after photos and request permission before using customer photos.
-- Write down your real estimate process, scheduling expectations, insurance/licensing details (if applicable), and any guarantees you actually offer. Do not claim credentials you do not have.
+> I’m Raphael with Wicked Roots Landscape in Raleigh. I help homeowners improve their outdoor spaces with [the specific service you currently offer]. I can talk through the project and provide an estimate after we understand the scope.
 
-## 2. Find local prospects responsibly
+Only list work, equipment, qualifications, availability, and guarantees that are true for your business. Pick one service to promote first (such as planting-bed refreshes, lawn/garden care, or a patio project) and make sure you can deliver it well.
 
-Begin with people and organizations that have a plausible business need:
+## A practical first-week plan
 
-- Property managers and small commercial property operators.
-- Realtors and home stagers who may need yard cleanup before a listing.
-- Local builders or remodelers who need landscaping subcontractors.
-- Small businesses whose storefront or grounds visibly need maintenance, approached respectfully.
-- Existing customers, friends, and neighbors who can refer someone (with no pressure).
+1. **Finish the basics:** Confirm the services you offer, the areas you serve, your schedule, and how estimates work. Replace the website's stock photo with your own project photo when possible.
+2. **Make it easy to contact you:** Test the phone link and estimate form on your phone. The current form opens the visitor's email app; it does not save leads on the website. Consider a hosted form provider if you need submissions to arrive regardless of the visitor's email setup.
+3. **Ask your network:** Send a personal note to people who know you, asking them to refer anyone who has asked about landscaping. Don't pressure them or ask for fake reviews.
+4. **Create a small prospect list:** Identify 10 relevant local businesses using public business contact channels: property managers, realtors, builders, or small commercial sites. Note why each might genuinely need your service.
+5. **Reach out individually:** Send a brief, truthful message to a business contact. Personalize it. Follow up once after about 4–5 business days, then stop unless they respond.
+6. **Build visible proof:** Photograph completed work with permission. Ask real customers for honest reviews after a job is finished.
+7. **Track results:** Record source, date, service requested, reply, estimate, and outcome in a simple spreadsheet. Do not retain unnecessary personal information.
 
-Use public business contact channels, local business associations, networking events, and referrals. Do not scrape personal contact details, buy dubious lists, or repeatedly message people who have not shown interest. For homeowners, prefer referrals, opt-in quote requests, permitted door hangers, or local community advertising rather than unsolicited email to private addresses.
+## Cold email for a local business
 
-Create a simple spreadsheet with: business/name, public source, reason it may be a fit, contact date, follow-up date, response, and do-not-contact status. Keep only the information you need.
+Send one-to-one messages to relevant business contacts—not scraped personal addresses. Check the rules that apply to you. Identify yourself and the business, use accurate subject lines, include any legally required business address and opt-out information, and honor opt-outs promptly. U.S. commercial email is subject to CAN-SPAM; check FTC guidance or qualified advice if uncertain.
 
-## 3. Short cold email sequence
-
-Personalize the bracketed line using something you actually observed. Do not pretend to have visited, inspected, or already helped their property. Send one-to-one messages to relevant business contacts, identify yourself and your business, and include a clear way to opt out. Stop contacting anyone who declines or opts out.
-
-### Email 1 — first note
-
-**Subject:** Landscaping support for [Business/Property Name]
+**Subject:** Local landscaping help for [Business Name]
 
 Hi [Name],
 
-I’m [Your Name] with Wicked Roots Landscape, a local landscaping business serving Raleigh, NC. I noticed [specific, truthful reason this might be relevant—for example, your company manages several local properties].
+I’m Raphael with Wicked Roots Landscape here in Raleigh. I saw that [truthful, specific reason you’re reaching out—for example, your team manages several local properties].
 
-We help with [specific service you really provide, such as seasonal cleanups or planting-bed refreshes]. If you have an upcoming project or need another local estimate, would it be useful if I sent over a few questions and arranged a site visit?
+I’m reaching out because we offer [specific service you actually provide]. If you have a property that needs this kind of work, would it be useful to talk about the scope and an estimate?
 
-If this isn’t relevant, just let me know and I won’t follow up.
+If it’s not relevant, let me know and I won’t follow up.
 
-Thanks,  
-[Your Name]  
+Best,  
+Raphael  
 Wicked Roots Landscape  
-(919) 780-9603 · wickedrootslandscaping@gmail.com
+(919) 780-9603 · wickedrootslandscaping@gmail.com  
+[Add your valid business mailing address if required]
 
-### Email 2 — gentle follow-up (about 4 business days later)
+**One follow-up (4–5 business days later):**
 
-**Subject:** Re: Landscaping support for [Business/Property Name]
+Hi [Name], just following up once on my note about [specific service]. If you have an upcoming project in Raleigh, I’d be glad to discuss whether it’s a fit and how an estimate would work. If not, no problem—I’ll close the loop.  
+Best, Raphael · (919) 780-9603
 
-Hi [Name],
+## Referral request for people who know you
 
-Just following up once in case landscaping help is on your list. We’re available to discuss [specific service] in Raleigh, NC and can provide an estimate after learning about the site and scope.
+Hi [Name], I’m growing Wicked Roots Landscape here in Raleigh. I’m currently taking on [type of work you actually want and can do]. If you know someone who’s already looking for help with a yard or garden project, would you mind passing them my number? No pressure—and thank you for supporting my business.
 
-Would a short call next week be useful? If not, no worries—reply “no thanks” and I’ll close the loop.
+## Local visibility checklist
 
-Best,  
-[Your Name]
+- Set up or claim a Google Business Profile; keep the business name, phone, services, hours, and service area accurate. If you operate as a service-area business from home, review Google's current address-display rules before publishing a home address.
+- Ask actual customers for honest reviews; never buy reviews or write them for customers.
+- Share real before-and-after photos and helpful seasonal updates on your business profile and appropriate neighborhood channels.
+- Build relationships with local garden centers, realtors, builders, and property managers.
+- Use community events, referrals, and permitted flyers where appropriate. For homeowners, prioritize opt-in inquiries and referrals over unsolicited email.
+- Avoid buying lists, scraping personal data, misleading claims, repeated unwanted contact, and posting the same advert in groups that prohibit promotions.
 
-### Email 3 — close the loop (about a week later)
+## Weekly scorecard
 
-**Subject:** Close the loop?
-
-Hi [Name],
-
-I haven’t heard back, so I’ll leave it here. If you need [specific service] later, you can reach Wicked Roots Landscape at (919) 780-9603 or wickedrootslandscaping@gmail.com.
-
-If you’d rather not receive another note, reply and I’ll make sure not to contact you again.
-
-Best,  
-[Your Name]
-
-## 4. A simple weekly routine
-
-- Contact 5–10 well-matched local businesses, not hundreds of random addresses.
-- Personalize the first sentence and service offer for each prospect.
-- Follow up only on the schedule above; stop after the final note or immediately if asked.
-- Ask satisfied customers for an honest review and referrals—never write reviews for them.
-- Share real project photos and useful seasonal advice on your business profile and local social pages.
-- Record inquiries, estimates, booked jobs, and where each lead came from. After a few weeks, repeat what produces genuine conversations.
-
-## 5. Build local visibility
-
-- Create or claim a Google Business Profile and keep your business name, phone, hours, service area, and categories accurate.
-- Ask real customers for honest reviews after completed work; reply professionally.
-- Add local pages or useful service-area details to the site only for places you actually serve. Avoid duplicate doorway pages.
-- Build relationships with nurseries, garden centers, realtors, builders, and property managers.
-- Consider neighborhood sponsorships, community events, local directories, and permitted flyers/door hangers.
-- Make it easy to call or request an estimate from a phone.
-
-## 6. Email and privacy rules
-
-Rules vary by recipient location. In the United States, commercial email is subject to CAN-SPAM requirements, including truthful sender information and subject lines, a valid postal address, and honoring opt-out requests. Canada and other jurisdictions may require consent or have stricter rules. Check the rules that apply where you and your recipients are before sending, include required business details, and get legal advice if unsure. This guide is practical information, not legal advice.
-
-## Measure what matters
-
-Track: relevant contacts, replies, estimate requests, site visits, estimates sent, jobs won, and time spent. A small number of well-qualified local conversations is more useful than a large volume of unsolicited mail.
+Track the counts—not just likes: relevant businesses contacted, replies, estimate requests, visits, estimates sent, jobs won, and the source of each inquiry. After a few weeks, spend more time on channels that lead to genuine conversations and qualified work.

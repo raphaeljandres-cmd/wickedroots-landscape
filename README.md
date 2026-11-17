@@ -1,29 +1,29 @@
 # Wicked Roots Landscape
 
-A premium Raleigh, NC landscaping landing page designed to convert local property owners into estimate requests.
+A premium-style static website concept for Wicked Roots Landscape in Raleigh, North Carolina.
 
-## Preview locally
+## Preview the site
 
-From the project folder, run:
+Run a local server from this folder:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open:
+Then open `http://localhost:8000`.
 
-http://localhost:8000
+## Business contact details in the page
 
-## Business information
-
-- Business name: Wicked Roots Landscape
-- City: Raleigh, NC
+- Raphael — Wicked Roots Landscape
+- Raleigh, NC and nearby areas
 - Phone: (919) 780-9603
 - Email: wickedrootslandscaping@gmail.com
 
-## Notes
+## Important before sharing with customers
 
-- This is a static landing page.
-- The contact form opens the visitor’s email app using a `mailto:` link.
-- It is ideal for a small business site before adding a hosted form or CRM.
-- Replace any placeholder or generic content with your own project photos, reviews, or service details when available.
+- Confirm that every listed service and service area is accurate.
+- Replace the demonstration garden photo with a real photo of your work when you can.
+- The estimate form uses a `mailto:` link. It opens the visitor's email app and does not store submissions; test it on a phone and computer. Use a hosted form service for dependable lead capture.
+- Do not add made-up reviews, project counts, certifications, guarantees, or availability claims.
+
+For a beginner-friendly prospecting and local marketing plan, see [LOCAL-LEADS.md](LOCAL-LEADS.md).
