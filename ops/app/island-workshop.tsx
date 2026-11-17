@@ -1,14 +1,12 @@
-type CrewMember = {
-  name: string;
-  role: string;
-  initials: string;
-  className: string;
-};
+type District = { id: string; title: string; subtitle: string; kind: string; icon: string; person: string; activity: string; className: string };
 
-const crew: CrewMember[] = [
-  { name: "Fern", role: "Finding the best-fit leads", initials: "F", className: "fern" },
-  { name: "Pip", role: "Writing a thoughtful draft", initials: "P", className: "pip" },
-  { name: "Oak", role: "Checking every detail", initials: "O", className: "oak" },
+const districts: District[] = [
+  { id: "crew", title: "Crew Cottage", subtitle: "The crew's cozy home", kind: "cottage", icon: "🏡", person: "Fern", activity: "planning today's route", className: "district-crew" },
+  { id: "garden", title: "Lead Garden", subtitle: "Where new leads grow", kind: "garden-house", icon: "🌼", person: "Pip", activity: "planting a fresh idea", className: "district-garden" },
+  { id: "treehouse", title: "Activity Treehouse", subtitle: "A lookout for every task", kind: "treehouse-house", icon: "🌳", person: "Oak", activity: "checking the day's work", className: "district-treehouse" },
+  { id: "post-office", title: "Post Office", subtitle: "Thoughtful notes, ready to go", kind: "post-house", icon: "✉️", person: "Pip", activity: "writing a friendly note", className: "district-post" },
+  { id: "workshop", title: "Workshop", subtitle: "Tools, plans & good ideas", kind: "workshop-house", icon: "🧰", person: "Fern", activity: "building a new plan", className: "district-workshop" },
+  { id: "harbor", title: "Sunny Harbor", subtitle: "A little break by the sea", kind: "harbor-house", icon: "⚓", person: "Oak", activity: "taking a tiny tea break", className: "district-harbor" },
 ];
 
 export default function IslandWorkshop() {
@@ -16,45 +14,39 @@ export default function IslandWorkshop() {
     <section className="island-workshop" aria-labelledby="island-title">
       <div className="island-copy">
         <p className="island-eyebrow">A LITTLE PLACE FOR GOOD WORK</p>
-        <h1 id="island-title">Welcome to Cartoonland!</h1>
-        <p className="island-intro">A sunny little island where your crew plans, writes, and checks together. Everything is mapped out and ready to explore.</p>
-        <div className="island-crew" aria-label="Meet your crew">
-          {crew.map((member) => (
-            <div className="island-crew-card" key={member.name}>
-              <span className={`island-avatar ${member.className}`}>{member.initials}</span>
-              <span><strong>{member.name}</strong><small>{member.role}</small></span>
-            </div>
-          ))}
-        </div>
-        <p className="island-note"><span aria-hidden="true" /> Your crew is ready for a busy day</p>
+        <h1 id="island-title">Cartoonland</h1>
+        <p className="island-intro">A sunny island where the crew plans, writes, and gets things done. Pick a place to explore!</p>
       </div>
-
-      <div className="island-scene" role="img" aria-label="A colorful cartoon island village with houses, a workshop, a garden, and tiny workers walking around">
-        <div className="scene-sun" />
-        <div className="scene-cloud cloud-one" />
-        <div className="scene-cloud cloud-two" />
-        <div className="scene-water water-back" />
-        <div className="scene-water water-front" />
-        <div className="scene-tag"><b>ISLAND WORKSHOP</b></div>
+      <div className="island-scene" role="img" aria-label="A full-screen cartoon island village with colorful houses, tiny crew members walking and working, and playful speech bubbles">
+        <div className="scene-sun" aria-hidden="true"><span>✦</span></div>
+        <div className="scene-cloud cloud-one" aria-hidden="true" />
+        <div className="scene-cloud cloud-two" aria-hidden="true" />
+        <div className="scene-cloud cloud-three" aria-hidden="true" />
+        <div className="scene-water water-back" aria-hidden="true" />
+        <div className="scene-water water-front" aria-hidden="true" />
         <div className="scene-island">
-          <div className="scene-tree tree-left" />
-          <div className="scene-tree tree-right" />
-          <div className="scene-road" />
-          <div className="scene-plot plot-crew red"><span>Crew</span><small className="mini-label">Cottage</small></div>
-          <div className="scene-plot plot-garden green"><span>Lead</span><small className="mini-label">Garden</small></div>
-          <div className="scene-plot plot-activity blue"><span>Activity</span><small className="mini-label">Treehouse</small></div>
-          <div className="scene-plot plot-mail purple"><span>Mail</span><small className="mini-label">Office</small></div>
-          <div className="scene-plot plot-harbor gold"><span>Harbor</span><small className="mini-label">Dock</small></div>
-          <div className="scene-plot plot-workshop pink"><span>Workshop</span><small className="mini-label">Studio</small></div>
-          <div className="scene-lighthouse" />
-          <div className="scene-mini-people">
-            <div className="person green a" />
-            <div className="person pink b" />
-            <div className="person blue c" />
-            <div className="person yellow d" />
-          </div>
+          <div className="scene-path path-loop" aria-hidden="true" />
+          <div className="scene-path path-cross" aria-hidden="true" />
+          <div className="scene-pond" aria-hidden="true"><span>✦</span></div>
+          <div className="scene-tree tree-left" aria-hidden="true" /><div className="scene-tree tree-right" aria-hidden="true" /><div className="scene-tree tree-top" aria-hidden="true" />
+          {districts.map((district) => (
+            <article id={district.id} className={`island-district ${district.className}`} key={district.id}>
+              <div className={`district-building ${district.kind}`} aria-hidden="true">
+                <span className="building-roof" /><span className="building-body"><i className="building-window window-one" /><i className="building-window window-two" /><i className="building-door" /></span>
+                {district.kind === "treehouse-house" && <><span className="treehouse-trunk" /><span className="treehouse-leaves" /></>}
+                {district.kind === "workshop-house" && <span className="workshop-tools">⚒</span>}
+                {district.kind === "post-house" && <span className="post-flag">✉</span>}
+              </div>
+              <div className="district-sign"><span>{district.icon}</span><strong>{district.title}</strong><small>{district.subtitle}</small></div>
+              <div className={`island-worker ${district.person.toLowerCase()} ${district.className}-worker`} aria-label={`${district.person} is ${district.activity}`}>
+                <span className="worker-speech"><b>{district.activity}</b></span>
+                <span className="worker-body"><i className="worker-face">{district.person[0]}</i><i className="worker-torso" /><i className="worker-arm" /><i className="worker-leg leg-left" /><i className="worker-leg leg-right" /></span>
+              </div>
+            </article>
+          ))}
+          <div className="island-butterfly butterfly-one" aria-hidden="true">🦋</div><div className="island-butterfly butterfly-two" aria-hidden="true">🦋</div>
         </div>
-        <span className="scene-caption">THE ISLAND WORKSHOP <span>✦</span></span>
+        <span className="scene-tag"><b>WELCOME TO THE ISLAND WORKSHOP</b></span>
       </div>
     </section>
   );
