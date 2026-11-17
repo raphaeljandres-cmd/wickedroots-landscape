@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./styles.css";
 import "./agent-characters.css";
+import "./island-workshop.css";
 
 export const metadata: Metadata = {
   title: "Wicked Roots Ops",
