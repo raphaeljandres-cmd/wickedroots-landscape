@@ -1,36 +1,29 @@
 # Wicked Roots Landscape
 
-A static lead-generation website concept for a local landscaping business.
+A premium Raleigh, NC landscaping landing page designed to convert local property owners into estimate requests.
 
 ## Preview locally
 
-1. Download or clone this repository.
-2. Open a terminal in the project folder.
-3. Run `python -m http.server 8000`.
-4. Visit `http://localhost:8000` in your browser.
+From the project folder, run:
 
-## Business details for this site
+```bash
+python -m http.server 8000
+```
 
+Then open:
+
+http://localhost:8000
+
+## Business information
+
+- Business name: Wicked Roots Landscape
 - City: Raleigh, NC
 - Phone: (919) 780-9603
 - Email: wickedrootslandscaping@gmail.com
-- Service area: Raleigh, NC and nearby areas
 
-## Before publishing: personalize these details
+## Notes
 
-The page intentionally uses placeholders rather than invented business facts. Update:
-
-- `[YOUR CITY / AREA]` in the page headline and description
-- `[YOUR CITY AND NEARBY AREAS]` in the contact section
-- `[YOUR BUSINESS PHONE]` and `[YOUR BUSINESS EMAIL]`
-- `BUSINESS_EMAIL` at the top of `script.js`
-- the Unsplash demo image in `styles.css` with a photo of your own work, if available
-- the list of services to match what you actually offer
-
-The estimate form currently opens the visitor's email application using a `mailto:` link. It is not a hosted form and depends on the visitor having an email app configured. For more reliable lead capture, connect a form provider or CRM before relying on it.
-
-Do not publish sample reviews, customer counts, guarantees, or availability claims as real facts. Add genuine reviews and project photos only with permission.
-
-## Lead generation
-
-See [`LOCAL-LEADS.md`](LOCAL-LEADS.md) for a beginner-friendly local outreach plan and a three-email sequence.
+- This is a static landing page.
+- The contact form opens the visitor’s email app using a `mailto:` link.
+- It is ideal for a small business site before adding a hosted form or CRM.
+- Replace any placeholder or generic content with your own project photos, reviews, or service details when available.
