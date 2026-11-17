@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#17251d" />
+  <meta name="description" content="Lead board and email approval queue prototype for Wicked Roots Landscape." />
+  <title>Leads & Outreach | Wicked Roots Landscape</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="outreach.css" />
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">W</span><span><small>WICKED ROOTS</small><strong>LANDSCAPE</strong></span></a><nav><a href="dashboard.html">Schedule</a><a href="index.html">Website</a></nav></header>
+  <main class="wrap">
+    <section class="intro"><div><p class="eyebrow">RALEIGH, NORTH CAROLINA</p><h1>Leads & outreach.</h1><p class="muted">Keep prospects organized and review every message before opening it in your email app.</p></div><div class="date-card"><span>FOLLOW-UPS DUE</span><strong id="due-count">0</strong></div></section>
+    <aside class="notice"><strong>Prototype, not a shared production app.</strong> Data stays in this browser on this device. No AI service or email account is connected. Drafts are template-based, not AI-generated. “Approve & open email” opens a draft for you to review and send yourself; it does not send automatically. Don’t enter sensitive customer information.</aside>
+
+    <section class="panel lead-panel"><div class="panel-heading"><div><p class="eyebrow">PROSPECTS</p><h2>Lead board</h2><p class="muted small">Use relevant referrals or appropriate public business contacts. Record a truthful reason for reaching out.</p></div><div class="filters"><input id="search" type="search" placeholder="Search leads" aria-label="Search leads" /><select id="status-filter" aria-label="Filter by status"><option value="all">All statuses</option><option>New</option><option>Contacted</option><option>Follow-up</option><option>Estimate</option><option>Won</option><option>Closed</option></select></div></div>
+      <div class="lead-layout"><form id="lead-form" class="form form-card"><h3 id="lead-form-title">Add a lead</h3><input type="hidden" name="id" /><label>Business or contact name<input name="name" required maxlength="100" placeholder="Name or business" /></label><label>Public business email<input name="email" type="email" maxlength="160" placeholder="name@business.com" /></label><label>Phone (optional)<input name="phone" type="tel" maxlength="40" /></label><label>Source<input name="source" maxlength="120" placeholder="Referral, business website…" /></label><label>Why might this be a fit? <span>Use an observation you verified.</span><textarea name="context" rows="3" maxlength="500" placeholder="For example: manages several local properties; asks about seasonal planting."></textarea></label><div class="two-col"><label>Status<select name="status"><option>New</option><option>Contacted</option><option>Follow-up</option><option>Estimate</option><option>Won</option><option>Closed</option></select></label><label>Follow-up date<input name="followUp" type="date" /></label></div><div class="form-actions"><button class="button" type="submit" id="lead-save">Save lead</button><button class="button quiet hidden" type="button" id="lead-cancel">Cancel</button></div></form><div id="lead-list" class="lead-list" aria-live="polite"></div></div>
+    </section>
+
+    <section class="panel composer-panel"><div class="panel-heading"><div><p class="eyebrow">HUMAN REVIEW REQUIRED</p><h2>Draft an outreach email</h2><p class="muted small">Choose a lead, select a real service you offer, review the draft, then add it to the approval queue.</p></div></div>
+      <form id="draft-form" class="form draft-form"><label>Lead<select name="leadId" id="draft-lead" required><option value="">Choose a lead with an email</option></select></label><label>Service you actually offer<input name="service" required maxlength="120" placeholder="e.g. planting-bed refresh" /></label><label>Verified personal context <span>Optional. Never invent a site visit or prior relationship.</span><textarea name="context" rows="2" maxlength="500" placeholder="A specific, truthful reason this might be relevant"></textarea></label><button class="button" type="submit">Create editable draft</button></form>
+    </section>
+
+    <section class="panel queue-panel"><div class="panel-heading"><div><p class="eyebrow">NOTHING SENDS WITHOUT YOUR ACTION</p><h2>Approval queue <span id="pending-count" class="count">0</span></h2><p class="muted small">Check recipient, claims, subject, and message. Approving opens your email app; you still press Send there.</p></div><select id="queue-filter" aria-label="Filter email queue"><option value="pending">Needs review</option><option value="all">All drafts</option></select></div><div id="queue-list" class="queue-list" aria-live="polite"></div></section>
+    <footer><span>Wicked Roots Landscape · Outreach prototype</span><span>Respect opt-outs and applicable email laws. No bulk sending.</span></footer>
+  </main>
+  <script src="outreach.js"></script>
+</body>
+</html>
